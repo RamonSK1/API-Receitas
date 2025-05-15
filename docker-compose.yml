@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: api_receitas
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./instance:/app/instance
+      - .:/app  # Adicione isso para desenvolvimento (opcional)
+    environment:
+      - FLASK_APP=app.py  # Adicione isso
+      - FLASK_ENV=development
+      - SQLALCHEMY_DATABASE_URI=sqlite:////app/instance/receitas.db
+      - SQLALCHEMY_TRACK_MODIFICATIONS=False
+    restart: unless-stopped

@@ -1,5 +1,5 @@
 pr: 
- - Docker
+ - main
 
 jobs:
  - name: Lint

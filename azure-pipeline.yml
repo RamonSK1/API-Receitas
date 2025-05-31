@@ -1,0 +1,8 @@
+pr: 
+ - Docker
+
+jobs:
+ - name: Lint
+   steps:
+   - checkout: self
+     fetchDepth: 0
